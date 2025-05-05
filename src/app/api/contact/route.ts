@@ -26,24 +26,22 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { name, surname, email, message } = body;
+    const { name, surname, email, message } = await req.json();
 
     await connectToDB();
 
-    const newContact = new Contact({ name, surname, email, message });
-    await newContact.save();
+    await new Contact({ name, surname, email, message }).save();
 
     await transporter.sendMail({
       from: `"Portfolio "<${process.env.SMTP_USER}>`,
-      to: process.env.ADMIN_EMAIL,
-      subject: `Nuevo mensaje de ${name} ${surname}`,
-      text: `De ${name} ${surname} <${email}>
-      Mensaje: ${message}`,
+      to: email,
+      subject: `Hola, ${name} ,buen dia`,
+      text: `Gracias por contactarme>
+      Recibi tu mensaje: ${message}`,
       html: `  <h2>Nuevo mensaje de contacto</h2>
-        <p><strong>Nombre:</strong> ${name} ${surname}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Mensaje:</strong><br/>${message}</p>`,
+        <p>Gracias por contactarme.Recibi tu mensaje</p>
+        <blockquote>${message}</blockquote>
+        <p>Te responderé pronto</p>`,
     });
 
     return NextResponse.json(
