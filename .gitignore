@@ -40,12 +40,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Ignora toda la carpeta Downloads
+# Downloads
 Downloads/
 
-# Ignora archivos comunes grandes o temporales
+# 
 *.iso
 *.exe
 *.mp4
 *.mp3
-# etc.
+

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
-export default function page() {
+export default function TestimoniesPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
@@ -75,18 +75,14 @@ export default function page() {
           </ul>
         </nav>
         <section className="grid grid-cols md:grid-cols-2 gap-6">
-          <div className="bg-[#40B9B9] rounded-md p-4 max-w-md border-2 text-center">
-            <p className="font-bold">Testimonie 1</p>
-          </div>
-          <div className="bg-[#40B9B9] rounded-md p-4 max-w-md border-2 text-center">
-            <p className="font-bold">Testimonie 2</p>
-          </div>
-          <div className="bg-[#40B9B9] rounded-md p-4 max-w-md border-2 text-center">
-            <p className="font-bold">Testimonie 3</p>
-          </div>
-          <div className="bg-[#40B9B9] rounded-md p-4 max-w-md border-2 text-center">
-            <p className="font-bold">Testimonie 4</p>
-          </div>
+          {testimonies.map((title, idx) => (
+            <div
+              key={`proyect-${idx}`}
+              className="bg-[#40B9B9] rounded-md p-4 border-2 text-center transition-transform duration-300 hover:scale-105"
+            >
+              <p className="font-bold">{title}</p>
+            </div>
+          ))}
           <div className="flex gap-4 justify-center items-center">
             {/* <Image
               src="/image.png"

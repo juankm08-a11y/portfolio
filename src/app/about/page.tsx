@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
-export default function page() {
+export default function AboutPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
