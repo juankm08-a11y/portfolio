@@ -1,10 +1,17 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
+interface Proyect {
+  title: string;
+  description: string;
+  imageUrl: string;
+}
+
 export default function ProyectsPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/testimonies", label: "Testimonies" },
@@ -12,7 +19,22 @@ export default function ProyectsPage() {
     { href: "/contact", label: "Contact" },
   ];
 
-  const proyects = ["Proyect 1", "Proyect 2", "Proyect 3", "Proyect 4"];
+  const proyects: Proyect[] = [
+    {
+      title: "Proyect 1",
+      description: "Description of Proyect 1",
+      imageUrl: "/images/proyect1.png",
+    },
+    {
+      title: "Proyect 2",
+      description: "Description of Proyect 2",
+      imageUrl: "/images/proyect2.png",
+    },
+  ];
+
+  const toggleProyect = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
   return (
     <main className="flex flex-col items-center min-h-screen p-4 md:p-10 bg-white transition-all duration-500 ease-in-out">
       <section className="border-2 rounded-lg bg-[#90EAE9] w-full max-w-sm md:max-w-4xl md:p-10 space-y-6">
@@ -71,43 +93,28 @@ export default function ProyectsPage() {
           </ul>
         </nav>
         <section className="grid grid-cols md:grid-cols-2 gap-6">
-          {proyects.map((title, idx) => (
+          {proyects.map((proy, idx) => (
             <div
-              key={`proyect-${idx}`}
+              key={idx}
               className="bg-[#40B9B9] rounded-md p-4 border-2 text-center transition-transform duration-300 hover:scale-105"
+              onClick={() => toggleProyect(idx)}
             >
-              <p className="font-bold">{title}</p>
+              <p className="font-bold">{proy.title}</p>
+
+              {openIndex === idx && (
+                <div className="mt-2 bg-white rounded-md p-4 shadow-md">
+                  <Image
+                    src={proy.imageUrl}
+                    alt={proy.title}
+                    width={600}
+                    height={600}
+                    className="w-full h-auto rounded"
+                  />
+                  <p className="mt-2 text-sm">{proy.description}</p>
+                </div>
+              )}
             </div>
           ))}
-          <div className="flex gap-4 justify-center items-center">
-            {/* <Image
-              src="image.png"
-              alt="image profile"
-              className="w-20 h-20 rounded-full border-2"
-            /> */}
-          </div>
-
-          <div className="flex gap-4 justify-center items-center">
-            {/*<Image
-              src="image.png"
-              alt="image profile"
-              className="w-20 h-20 rounded-full border-2 "
-            />*/}
-          </div>
-          <div className="flex gap-4 justify-center items-center">
-            {/*<Image
-              src="image.png"
-              alt="image profile"
-              className="w-20 h-20 rounded-full border-2 "
-            />*/}
-          </div>
-          <div className="flex gap-4 justify-center items-center">
-            {/*<Image
-              src="image.png"
-              alt="image profile"
-              className="w-20 h-20 rounded-full border-2 "
-            />*/}
-          </div>
         </section>
 
         <footer className="bg-[#FFDE83] rounded-md p-4 text-center">
