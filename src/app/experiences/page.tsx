@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -80,25 +81,22 @@ export default function ExperiencesPage() {
             </div>
           ))}
           <div className="flex gap-4 justify-center items-center">
-            {/* <Image
+            <Image
               src="/image.png"
               alt="image profile"
               width={254}
               height={24}
               className="rounded-full border-2"
             />
-            
-          */}
           </div>
           <div className="flex gap-4 justify-center items-center">
-            {/* <Image
+            <Image
               src="/image.png"
               alt="image profile"
               width={254}
               height={24}
               className="rounded-full border-2"
             />
-           */}
           </div>
         </section>
         <footer className="bg-[#FFDE83] rounded-md p-4 text-center transition-opacity duration-500">

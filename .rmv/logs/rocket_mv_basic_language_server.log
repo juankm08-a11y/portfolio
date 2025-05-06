@@ -7970,3 +7970,4 @@ Account{name=..., path=..., type=PREDICT}
 2025-05-06 18:05:41.885 [pool-3-thread-1] INFO  com.rs.mv.mvvs.client.catalog.from.scan.CurrentPathScanner - [client:400205]scan file in current open file directory(C:/Users/Juan C/Desktop/portfolio)
 2025-05-06 18:05:43.694 [pool-3-thread-1] INFO  com.rs.mv.mvvs.client.catalog.from.scan.CurrentPathScanner - [client:400205]scan file in current open file directory(C:/Users/Juan C/Desktop/portfolio/src/app/experiences)
 2025-05-06 18:05:51.229 [pool-3-thread-1] INFO  com.rs.mv.mvvs.client.catalog.from.scan.CurrentPathScanner - [client:400205]scan file in current open file directory(C:/Users/Juan C/Desktop/portfolio/src/app/contact)
+2025-05-06 18:14:05.306 [pool-3-thread-1] INFO  com.rs.mv.mvvs.client.catalog.from.scan.CurrentPathScanner - [client:400205]scan file in current open file directory(C:/Users/Juan C/Desktop/portfolio/src/app/experiences)
