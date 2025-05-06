@@ -14,10 +14,22 @@ export default function ContactPage() {
   ];
 
   const socials = [
-    { Icon: Phone, label: "Phone", href: "#" },
-    { Icon: Instagram, label: "Instagram", href: "#" },
-    { Icon: Facebook, label: "Facebook", href: "#" },
-    { Icon: Mail, label: "Mail", href: "#" },
+    { Icon: Phone, label: "Phone", href: "tel:+3154391213" },
+    {
+      Icon: Instagram,
+      label: "Instagram",
+      href: "https://www.instagram.com/juanc_munoz_01/",
+    },
+    {
+      Icon: Facebook,
+      label: "Facebook",
+      href: "https://www.facebook.com/juancho.munoz01/",
+    },
+    {
+      Icon: Mail,
+      label: "Mail",
+      href: "https://mail.google.com/mail/u/1/#inbox",
+    },
   ];
   return (
     <main className="flex flex-col items-center min-h-screen p-4 md:p-10 bg-white">
