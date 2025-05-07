@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import FormContactPage from "./form-contact/page";
+import Image from "next/image";
 
 export default function Home() {
   const router = useRouter();
@@ -119,18 +120,20 @@ export default function Home() {
             </div>
           </div>
           <div className="flex gap-4">
-            {/* <Image
-              src="/image.png"
-              alt="image profile"
-              width={254}
-              height={24}
+            <Image
+              src="/images/presentation-image.jpeg"
+              alt="image personal"
+              width={170}
+              height={200}
               className="rounded-full border-2"
             />
             <Image
-              src="/image.png"
-              alt="image profile"
+              src="/images/presentation-image2.jpeg"
+              alt="image personal"
+              width={170}
+              height={200}
               className="rounded-full border-2"
-            /> */}
+            />
           </div>
         </section>
 
