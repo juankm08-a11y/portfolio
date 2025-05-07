@@ -83,21 +83,6 @@ export default function TestimoniesPage() {
               <p className="font-bold">{title}</p>
             </div>
           ))}
-          <div className="flex gap-4 justify-center items-center">
-            {/* <Image
-              src="/image.png"
-              alt="image profile"
-              width={254}
-              height={24}
-              className="rounded-full border-2"
-            />
-            <Image
-              src="/image.png"
-              alt="image profile"
-              className="rounded-full border-2"
-            /> 
-          */}
-          </div>
         </section>
 
         <footer className="bg-[#FFDE83] rounded-md p-4 text-center">

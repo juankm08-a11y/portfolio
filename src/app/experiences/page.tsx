@@ -3,8 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
+interface Experience {
+  title: string;
+  description: string;
+  imageUrl: string;
+}
 export default function ExperiencesPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -13,7 +19,22 @@ export default function ExperiencesPage() {
     { href: "/contact", label: "Contact" },
   ];
 
-  const Experiences = ["Experience 1", "Experience 2"];
+  const Experiences: Experience[] = [
+    {
+      title: "Experience 1",
+      description: "Description of Experience 1",
+      imageUrl: "/images/experience1.png",
+    },
+    {
+      title: "Experience 2",
+      description: "Description of Experience 2",
+      imageUrl: "/images/experience2.png",
+    },
+  ];
+
+  const toggleExperience = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
   return (
     <main className="flex flex-col items-center min-h-screen p-4 md:p-10 bg-white transition-all duration-500 ease-in-out">
       <section className="border-2 rounded-lg bg-[#90EAE9] w-full max-w-sm md:max-w-4xl md:p-10 space-y-6">
@@ -72,32 +93,28 @@ export default function ExperiencesPage() {
           </ul>
         </nav>
         <section className="grid grid-cols md:grid-cols-2 gap-6">
-          {Experiences.map((title, idx) => (
+          {Experiences.map((exp, idx) => (
             <div
-              key={`proyect-${idx}`}
+              key={idx}
               className="bg-[#40B9B9] rounded-md p-4 border-2 text-center transition-transform duration-300 hover:scale-105"
+              onClick={() => toggleExperience(idx)}
             >
-              <p className="font-bold">{title}</p>
+              <p className="font-bold">{exp.title}</p>
+
+              {openIndex === idx && (
+                <div className="mt-2 bg-white rounded-md p-4 shadow-md">
+                  <Image
+                    src={exp.imageUrl}
+                    alt={exp.title}
+                    width={600}
+                    height={600}
+                    className="w-full h-auto rounded"
+                  />
+                  <p className="mt-2 text-sm">{exp.description}</p>
+                </div>
+              )}
             </div>
           ))}
-          <div className="flex gap-4 justify-center items-center">
-            <Image
-              src="/image.png"
-              alt="image profile"
-              width={254}
-              height={24}
-              className="rounded-full border-2"
-            />
-          </div>
-          <div className="flex gap-4 justify-center items-center">
-            <Image
-              src="/image.png"
-              alt="image profile"
-              width={254}
-              height={24}
-              className="rounded-full border-2"
-            />
-          </div>
         </section>
         <footer className="bg-[#FFDE83] rounded-md p-4 text-center transition-opacity duration-500">
           © Juan Carlos Muñoz 22-04-2025 <br />
