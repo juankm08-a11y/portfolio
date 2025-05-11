@@ -41,9 +41,9 @@ export default function AboutPage() {
 
   const myhabits: Habits[] = [
     {
-      title: "Kloe",
-      description: "Hello, I’m Kloe, the little one in the house.",
-      imageUrl: "/images/pets/pet_kloe1.png",
+      title: "Habit 1",
+      description: "This is my habit 1",
+      imageUrl: "/images/habits/myhabit1.png",
     },
   ];
 
