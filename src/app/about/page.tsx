@@ -1,9 +1,23 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
+interface Pets {
+  title: string;
+  description: string;
+  imageUrl: string;
+}
+
+interface MyHabits {
+  title: string;
+  description: string;
+  imageUrl: string;
+}
+
 export default function AboutPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -12,7 +26,22 @@ export default function AboutPage() {
     { href: "/contact", label: "Contact" },
   ];
 
-  const aboutItems = ["My Pets", "My Habits"];
+  const mypets: Pets[] = [
+    {
+      title: "Kloe",
+      description: "Hello, I’m Kloe, the little one in the house.",
+      imageUrl: "/images/pets/pet_kloe1.png",
+    },
+    {
+      title: "Yue",
+      description: "Hello, I’m Yue, I’m white and very beautiful too",
+      imageUrl: "/images/pets/pet_yue1.jpeg",
+    },
+  ];
+
+  const tooglePets = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
   return (
     <main className="flex flex-col items-center min-h-screen p-4 md:p-10 bg-white transition-all duration-500 ease-in-out">
       <section className="border-2 rounded-lg bg-[#90EAE9] w-full max-w-sm md:max-w-4xl md:p-10 space-y-6">
@@ -71,43 +100,27 @@ export default function AboutPage() {
           </ul>
         </nav>
         <section className="grid grid-cols-3 md:grid-cols-2 gap-6">
-          {aboutItems.map((text, idx) => (
+          {mypets.map((pet, idx) => (
             <div
-              key={`about-${idx}`}
-              className="bg-[#40B9B9] rounded-md p-4 text-center
-          transition-transform duration-300 hover:scale-105 max-w-md mx-auto"
+              key={idx}
+              className="bg-[#40B9B9] rounded-md p-4 border-2 text-center transition-transform duration-300 hover:scale-105"
+              onClick={() => tooglePets(idx)}
             >
-              <p className="font-semibold">{text}</p>
+              <p className="font-semibold">{pet.title}</p>
+              {openIndex === idx && (
+                <div className="mt-2 bg-white rounded-md p-4 shadow-md">
+                  <Image
+                    src={pet.imageUrl}
+                    alt={pet.title}
+                    width={600}
+                    height={600}
+                    className="w-full h-auto rounded"
+                  />
+                  <p className="mt-2 text-sm">{pet.description}</p>
+                </div>
+              )}
             </div>
           ))}
-          <div className="flex gap-4 justify-center items-center">
-            {/* <Image
-              src="/image.png"
-              alt="image profile"
-              width={254}
-              height={24}
-              className="rounded-full border-2"
-            />
-            <Image
-              src="/image.png"
-              alt="image profile"
-              className="rounded-full border-2"
-            /> 
-           */}
-            {/* <Image
-              src="/image.png"
-              alt="image profile"
-              width={254}
-              height={24}
-              className="rounded-full border-2"
-            />
-            <Image
-              src="/image.png"
-              alt="image profile"
-              className="rounded-full border-2"
-            /> 
-          */}
-          </div>
         </section>
         <footer className="bg-[#FFDE83] rounded-md p-4 text-center">
           © Juan Carlos Muñoz 22-04-2025 <br />
