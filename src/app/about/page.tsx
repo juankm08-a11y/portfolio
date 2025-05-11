@@ -9,7 +9,7 @@ interface Pets {
   imageUrl: string;
 }
 
-interface MyHabits {
+interface Habits {
   title: string;
   description: string;
   imageUrl: string;
@@ -39,7 +39,19 @@ export default function AboutPage() {
     },
   ];
 
+  const myhabits: Habits[] = [
+    {
+      title: "Kloe",
+      description: "Hello, I’m Kloe, the little one in the house.",
+      imageUrl: "/images/pets/pet_kloe1.png",
+    },
+  ];
+
   const tooglePets = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const toogleHabits = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
@@ -117,6 +129,27 @@ export default function AboutPage() {
                     className="w-full h-auto rounded"
                   />
                   <p className="mt-2 text-sm">{pet.description}</p>
+                </div>
+              )}
+            </div>
+          ))}
+          {myhabits.map((hab, idx) => (
+            <div
+              key={idx}
+              className="bg-[#40B9B9] rounded-md p-4 border-2 text-center transition-transform duration-300 hover:scale-105"
+              onClick={() => toogleHabits(idx)}
+            >
+              <p className="font-semibold">{hab.title}</p>
+              {openIndex === idx && (
+                <div className="mt-2 bg-white rounded-md p-4 shadow-md">
+                  <Image
+                    src={hab.imageUrl}
+                    alt={hab.title}
+                    width={600}
+                    height={600}
+                    className="w-full h-auto rounded"
+                  />
+                  <p className="mt-2 text-sm">{hab.description}</p>
                 </div>
               )}
             </div>
