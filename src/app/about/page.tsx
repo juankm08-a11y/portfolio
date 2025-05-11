@@ -30,7 +30,7 @@ export default function AboutPage() {
     {
       title: "Kloe",
       description: "Hello, I’m Kloe, the little one in the house.",
-      imageUrl: "/images/pets/pet_kloe1.png",
+      imageUrl: "/images/pets/pet_kloe1.jpeg",
     },
     {
       title: "Yue",
