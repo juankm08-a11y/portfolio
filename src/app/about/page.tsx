@@ -39,7 +39,19 @@ export default function AboutPage() {
     },
   ];
 
+  const myhabits: MyHabits[] = [
+    {
+      title: "myHabit1",
+      description: "description my habit1",
+      imageUrl: "/images/habits/habit1.png",
+    },
+  ];
+
   const tooglePets = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const toogleHabits = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
@@ -117,6 +129,27 @@ export default function AboutPage() {
                     className="w-full h-auto rounded"
                   />
                   <p className="mt-2 text-sm">{pet.description}</p>
+                </div>
+              )}
+            </div>
+          ))}
+          {myhabits.map((myhab, idx) => (
+            <div
+              key={idx}
+              className="bg-[#40B9B9] rounded-md p-4 border-2 text-center transition-transform duration-300 hover:scale-105"
+              onClick={() => tooglePets(idx)}
+            >
+              <p className="font-semibold">{myhab.title}</p>
+              {openIndex === idx && (
+                <div className="mt-2 bg-white rounded-md p-4 shadow-md">
+                  <Image
+                    src={myhab.imageUrl}
+                    alt={myhab.title}
+                    width={600}
+                    height={600}
+                    className="w-full h-auto rounded"
+                  />
+                  <p className="mt-2 text-sm">{myhab.description}</p>
                 </div>
               )}
             </div>
