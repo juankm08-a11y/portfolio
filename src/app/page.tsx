@@ -87,15 +87,15 @@ export default function Home() {
           </button>
           <h1>PORTFOLIO</h1>
           <ul
-            className={`flex flex-wrap justify-center gap-4 md:gap-12 py-2 ${
+            className={`flex flex-overflow-x-auto no-scrollbar whitespace-nowrap gap-4 md:gap-12 py-2 transition-all duration-300 ease-in-out ${
               isMenuOpen ? "block" : "hidden"
-            }sm:flex transition-all duration-300 ease-in-out`}
+            }sm:flex`}
           >
             {navLinks.map((link, idx) => (
-              <li key={`${link.label}-${idx}`}>
+              <li key={`${link.label}-${idx}`} className="flex-shrink-0">
                 <Link
                   href={link.href}
-                  className="hover:underline transition-colors duration-200 cursor-pointer"
+                  className="hover:underline transition-colors duration-200 cursor-pointer px-2"
                 >
                   {link.label}
                 </Link>
