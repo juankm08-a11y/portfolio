@@ -2680,3 +2680,4 @@ Account{name=..., path=..., type=PREDICT}
 2025-05-14 07:02:56.678 [pool-3-thread-1] INFO  com.rs.mv.mvvs.instance.userspace.UserspaceManager - [framework:30010402]config file(C:\Users\Juan C/.rmv/config) watcher launch successful
 2025-05-14 07:03:59.724 [pool-3-thread-1] INFO  com.rs.mv.mvvs.client.catalog.from.scan.CurrentPathScanner - [client:400205]scan file in current open file directory(C:/Users/Juan C/Desktop/portfolio/src/app/utils)
 2025-05-14 07:04:12.848 [pool-3-thread-1] INFO  com.rs.mv.mvvs.client.catalog.from.scan.CurrentPathScanner - [client:400205]scan file in current open file directory(C:/Users/Juan C/Desktop/portfolio/src/app)
+2025-05-14 07:12:20.535 [main] WARN  com.rs.mv.mvvs.Startup - [LSP:100104]ROCKET MV BASIC EXTENSION exited
