@@ -5,12 +5,20 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import FormContactPage from "./form-contact/page";
 import Image from "next/image";
+import { cn } from "./utils/cn";
 
 export default function Home() {
   const router = useRouter();
   const [showContact, setShowContact] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const formRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     if (showContact) {
@@ -51,13 +59,18 @@ export default function Home() {
       <section className="border-2 rounded-lg bg-[#90EAE9] w-full max-w-sm md:max-w-4xl p-4 md:p-0 space-y-4 md:space-y-6">
         <header className="text-center space-y-1 ">
           <h1 className="text-lg md:text-xl font-semibold text-[#CE5D5D] transition-colors duration-300 hover:text-red-600">
-            PORTFOLIO
+            JCFOLIO
           </h1>
           <h2 className="text-sm md:text-lg font-semibold text-[#CE5D5D]">
             Juan Carlos Muñoz Pabon
           </h2>
         </header>
-        <nav className="relative border-2 bg-[#9CFA8D] p-2 rounded-md">
+        <nav
+          className={cn(
+            "relative border-2 bg-[#9CFA8D] p-2 rounded-md transition-shadow",
+            isScrolled && "shadow-lg top-0 z-20"
+          )}
+        >
           <button
             className="sm:hidden absolute top-2 right-2 p-2 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -85,9 +98,9 @@ export default function Home() {
               }}
             />
           </button>
-          <h1>PORTFOLIO</h1>
+          <h1>JCFOLIO</h1>
           <ul
-            className={`flex flex-overflow-x-auto no-scrollbar whitespace-nowrap gap-4 md:gap-12 py-2 transition-all duration-300 ease-in-out ${
+            className={`flex flex-wrap justify-center gap-4 md:gap-12 py-2  ${
               isMenuOpen ? "block" : "hidden"
             }sm:flex`}
           >

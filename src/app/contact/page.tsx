@@ -33,7 +33,7 @@ export default function ContactPage() {
   ];
   return (
     <main className="flex flex-col items-center min-h-screen p-4 md:p-10 bg-white">
-      <section className="border-2 rounded-lg bg-[#90EAE9] w-full max-w-sm md:max-w-4xl md:p-10 space-y-6">
+      <section className="border-2 rounded-lg bg-[#90EAE9] w-full max-w-sm md:max-w-4xl p-4 md:p-0 space-y-4 md:space-y-6">
         <header className="text-center space-y-1">
           <h1 className="text-lg md:text-xl font-semibold text-[#CE5D5D]  ">
             PORTFOLIO
