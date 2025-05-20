@@ -25,13 +25,13 @@ export default function Home() {
 
   const mypersonalImages: PersonalImages[] = [
     {
-      title: "PresentationPersonal1",
+      title: "PresentationPersonal",
       imageUrl: "/images/personal-image.jpeg",
       description: "My presentation personal",
     },
     {
       title: "PresentationPersonal2",
-      imageUrl: "/images/personal2-image.jpeg",
+      imageUrl: "/images/personal-image2.jpeg",
       description: "My presentation personal",
     },
   ];
@@ -162,7 +162,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <section className="grid grid-cols-3 md:grid-cols-2 gap-6">
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {mypersonalImages.map((personalimg, idx) => (
               <div
                 key={idx}
