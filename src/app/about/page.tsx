@@ -37,6 +37,16 @@ export default function AboutPage() {
       description: "Hello, I’m Yue, I’m white and very beautiful too",
       imageUrl: "/images/pets/pet_yue1.jpeg",
     },
+    {
+      title: "Yue",
+      description: "Hello, I’m Yue, I’m white and very beautiful too",
+      imageUrl: "/images/pets/pet_yue2.jpeg",
+    },
+    {
+      title: "Yue",
+      description: "Hello, I’m Yue, I’m white and very beautiful too",
+      imageUrl: "/images/pets/pet_yue3.jpeg",
+    },
   ];
 
   const myhabits: Habits[] = [
