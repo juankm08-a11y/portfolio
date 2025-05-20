@@ -7,12 +7,38 @@ import FormContactPage from "./form-contact/page";
 import Image from "next/image";
 import { cn } from "./utils/cn";
 
+interface PersonalImages {
+  title: string;
+  imageUrl: string;
+  description: string;
+}
+
 export default function Home() {
   const router = useRouter();
   const [showContact, setShowContact] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   const formRef = useRef<HTMLElement>(null);
+
+  const mypersonalImages: PersonalImages[] = [
+    {
+      title: "PresentationPersonal1",
+      imageUrl: "/images/personal-image.jpeg",
+      description: "My presentation personal",
+    },
+    {
+      title: "PresentationPersonal2",
+      imageUrl: "/images/personal2-image.jpeg",
+      description: "My presentation personal",
+    },
+  ];
+
+  const toogleMyPersonalImages = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10);
@@ -137,20 +163,27 @@ export default function Home() {
             </div>
           </div>
           <div className="flex gap-4">
-            <Image
-              src="/images/presentation-image.jpeg"
-              alt="image personal"
-              width={170}
-              height={200}
-              className="rounded-full border-2"
-            />
-            <Image
-              src="/images/presentation-image2.jpeg"
-              alt="image personal"
-              width={170}
-              height={200}
-              className="rounded-full border-2"
-            />
+            {mypersonalImages.map((personalimg, idx) => (
+              <div
+                key={idx}
+                className="bg-[#40B9B9] rounded-md p-4 border-2 text-center transition-transform duration-300 hover:scale-105"
+                onClick={() => toogleMyPersonalImages(idx)}
+              >
+                <p className="font-semibold">{personalimg.title}</p>
+                {openIndex === idx && (
+                  <div className="mt-2 bg-white rounded-md p-4 shadow-md ">
+                    <Image
+                      src={personalimg.imageUrl}
+                      alt={personalimg.title}
+                      width={600}
+                      height={600}
+                      className="w-full h-auto rounded"
+                    />
+                    <p className="mt-2 text-sm">{personalimg.description}</p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </section>
 
