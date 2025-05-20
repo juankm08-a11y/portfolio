@@ -64,6 +64,10 @@ export default function Home() {
           <h2 className="text-sm md:text-lg font-semibold text-[#CE5D5D]">
             Juan Carlos Muñoz Pabon
           </h2>
+          <p className="text-center font-semibold md:text-lg text-[#CE5D5D]">
+            Welcome to my portfolio named JCFolio. Here, you can learn more
+            about me and my projects.
+          </p>
         </header>
         <nav
           className={cn(
