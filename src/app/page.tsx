@@ -162,7 +162,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex gap-4">
+          <section className="grid grid-cols-3 md:grid-cols-2 gap-6">
             {mypersonalImages.map((personalimg, idx) => (
               <div
                 key={idx}
@@ -184,7 +184,7 @@ export default function Home() {
                 )}
               </div>
             ))}
-          </div>
+          </section>
         </section>
 
         <section className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
