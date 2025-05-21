@@ -14,7 +14,7 @@ export default function ExperiencesPage() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/testimonies", label: "Testimonies" },
+    { href: "/testimonials", label: "Testimonials" },
     { href: "/experiences", label: "Experiences" },
     { href: "/contact", label: "Contact" },
   ];
@@ -23,13 +23,13 @@ export default function ExperiencesPage() {
     {
       title: "school where I studied",
       description: "I graduated from San Felipe Neri School in the year 2025.",
-      imageUrl: "/images/experience1.png",
+      imageUrl: "/images/experiences/experience.jpeg",
     },
     {
       title: "Visit Empresarial",
       description:
         "Five years ago, I had my company visit. It was an amazing experience where I got to visit software companies and learn more about the software industry, as well as explore the beautiful city of Medellín.",
-      imageUrl: "/images/experience2.png",
+      imageUrl: "/images/experience2.jpeg",
     },
   ];
 

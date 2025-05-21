@@ -11,7 +11,7 @@ export default function TestimonialsPage() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/testimonies", label: "Testimonies" },
+    { href: "/testimonials", label: "Testimonials" },
     { href: "/experiences", label: "Experiences" },
     { href: "/contact", label: "Contact" },
   ];

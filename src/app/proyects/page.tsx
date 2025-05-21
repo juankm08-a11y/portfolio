@@ -14,7 +14,7 @@ export default function ProyectsPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/testimonies", label: "Testimonies" },
+    { href: "/testimonials", label: "Testimonials" },
     { href: "/experiences", label: "Experiences" },
     { href: "/contact", label: "Contact" },
   ];
