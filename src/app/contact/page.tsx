@@ -1,7 +1,7 @@
 "use client";
 import { Facebook, Instagram, Mail, Phone } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { cn } from "@/app/utils/cn";
 
 export default function ContactPage() {
@@ -33,6 +33,12 @@ export default function ContactPage() {
       href: "https://mail.google.com/mail/u/1/#inbox",
     },
   ];
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
     <main className="flex flex-col items-center min-h-screen p-4 md:p-10 bg-white">
       <section className="border-2 rounded-lg bg-[#90EAE9] w-full max-w-sm md:max-w-4xl p-4 md:p-0 space-y-4 md:space-y-6">
