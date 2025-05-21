@@ -52,7 +52,7 @@ export default function AboutPage() {
     {
       title: "Habit 1",
       description: "This is my habit 1",
-      imageUrl: "/images/habits/myhabit1.png",
+      imageUrl: "/images/habits/myhabit1.jpeg",
     },
   ];
 
