@@ -27,7 +27,6 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const { name, surname, email, message } = await req.json();
-    const { fullname, description, experience } = await req.json();
     await connectToDB();
 
     await new Contact({ name, surname, email, message }).save();
@@ -49,7 +48,6 @@ export async function POST(req: Request) {
     );
   } catch (error) {
     console.error("Error al crear /api/contact", error);
-    console.error("Error al crear /api/testimonial", error);
     return NextResponse.json({ error: "Error del servidor" }, { status: 500 });
   }
 }
