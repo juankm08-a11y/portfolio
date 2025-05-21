@@ -10,7 +10,6 @@ import { cn } from "./utils/cn";
 interface PersonalImages {
   title: string;
   imageUrl: string;
-  description: string;
 }
 
 export default function Home() {
@@ -26,13 +25,19 @@ export default function Home() {
   const mypersonalImages: PersonalImages[] = [
     {
       title: "PresentationPersonal",
-      imageUrl: "/images/personal-image.jpeg",
-      description: "My presentation personal",
+      imageUrl: "/images/personalImages/personal-image.jpeg",
     },
     {
       title: "PresentationPersonal2",
-      imageUrl: "/images/personal-image2.jpeg",
-      description: "My presentation personal",
+      imageUrl: "/images/personalImages/personal-image2.jpeg",
+    },
+    {
+      title: "PresentationPersonal3",
+      imageUrl: "/images/personalImages/personal-image3.jpeg",
+    },
+    {
+      title: "PresentationPersonal3",
+      imageUrl: "/images/personalImages/personal-image4.jpeg",
     },
   ];
 
@@ -179,7 +184,6 @@ export default function Home() {
                       height={600}
                       className="w-full h-auto rounded"
                     />
-                    <p className="mt-2 text-sm">{personalimg.description}</p>
                   </div>
                 )}
               </div>

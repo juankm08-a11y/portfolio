@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-interface Pets {
+interface PetGroup {
   title: string;
   description: string;
-  imageUrl: string;
+  images: string[];
 }
 
 interface Habits {
@@ -17,7 +17,8 @@ interface Habits {
 
 export default function AboutPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openPetIndex, setOpenPetIndex] = useState<number | null>(null);
+  const [openHabitIndex, setOpenHabitIndex] = useState<number | null>(null);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -26,26 +27,20 @@ export default function AboutPage() {
     { href: "/contact", label: "Contact" },
   ];
 
-  const mypets: Pets[] = [
+  const mypets: PetGroup[] = [
     {
       title: "Kloe",
       description: "Hello, I’m Kloe, the little one in the house.",
-      imageUrl: "/images/pets/pet_kloe1.jpeg",
+      images: ["/images/pets/pet_kloe1.jpeg"],
     },
     {
       title: "Yue",
       description: "Hello, I’m Yue, I’m white and very beautiful too",
-      imageUrl: "/images/pets/pet_yue1.jpeg",
-    },
-    {
-      title: "Yue",
-      description: "Hello, I’m Yue, I’m white and very beautiful too",
-      imageUrl: "/images/pets/pet_yue2.jpeg",
-    },
-    {
-      title: "Yue",
-      description: "Hello, I’m Yue, I’m white and very beautiful too",
-      imageUrl: "/images/pets/pet_yue3.jpeg",
+      images: [
+        "/images/pets/pet_yue2.jpeg",
+        "/images/pets/pet_yue1.jpeg",
+        "/images/pets/pet_yue3.jpeg",
+      ],
     },
   ];
 
@@ -57,12 +52,12 @@ export default function AboutPage() {
     },
   ];
 
-  const tooglePets = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const tooglePet = (i: number) => {
+    setOpenPetIndex(openPetIndex === i ? null : i);
   };
 
-  const toogleHabits = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const toogleHabits = (i: number) => {
+    setOpenHabitIndex(openHabitIndex === i ? null : i);
   };
   return (
     <main className="flex flex-col items-center min-h-screen p-4 md:p-10 bg-white transition-all duration-500 ease-in-out">
@@ -122,23 +117,26 @@ export default function AboutPage() {
           </ul>
         </nav>
         <section className="grid grid-cols-3 md:grid-cols-2 gap-6">
-          {mypets.map((pet, idx) => (
+          {mypets.map((group, idx) => (
             <div
-              key={idx}
+              key={`petGroup-${idx}`}
               className="bg-[#40B9B9] rounded-md p-4 border-2 text-center transition-transform duration-300 hover:scale-105"
-              onClick={() => tooglePets(idx)}
+              onClick={() => tooglePet(idx)}
             >
-              <p className="font-semibold">{pet.title}</p>
-              {openIndex === idx && (
+              <p className="font-semibold">{group.title}</p>
+              {openPetIndex === idx && (
                 <div className="mt-2 bg-white rounded-md p-4 shadow-md">
-                  <Image
-                    src={pet.imageUrl}
-                    alt={pet.title}
-                    width={600}
-                    height={600}
-                    className="w-full h-auto rounded"
-                  />
-                  <p className="mt-2 text-sm">{pet.description}</p>
+                  {group.images.map((url, i) => (
+                    <Image
+                      key={i}
+                      src={url}
+                      alt={`${group.title} ${i + 1}`}
+                      width={600}
+                      height={600}
+                      className="w-full h-auto rounded"
+                    />
+                  ))}
+                  <p className="mt-2 text-sm">{group.description}</p>
                 </div>
               )}
             </div>
@@ -150,7 +148,7 @@ export default function AboutPage() {
               onClick={() => toogleHabits(idx)}
             >
               <p className="font-semibold">{hab.title}</p>
-              {openIndex === idx && (
+              {openHabitIndex === idx && (
                 <div className="mt-2 bg-white rounded-md p-4 shadow-md">
                   <Image
                     src={hab.imageUrl}

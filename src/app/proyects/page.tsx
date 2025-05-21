@@ -22,13 +22,13 @@ export default function ProyectsPage() {
   const proyects: Proyect[] = [
     {
       title: "Proyect 1",
-      description: "Description of Proyect 1",
-      imageUrl: "/images/proyect1.png",
+      description: "Scientific Calculator 2.0",
+      imageUrl: "/images/proyects/proyect_1.png",
     },
     {
       title: "Proyect 2",
-      description: "Description of Proyect 2",
-      imageUrl: "/images/proyect2.png",
+      description: "Login Card 1.0",
+      imageUrl: "/images/proyects/proyect_2.png",
     },
   ];
 
