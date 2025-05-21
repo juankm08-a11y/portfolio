@@ -46,22 +46,22 @@ export default function FormTestimonialPage() {
         </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700">
+            <label htmlFor="fullname" className="block text-gray-700">
               FullName
             </label>
             <input
               type="text"
-              id="name"
+              id="fullname"
               value={formData.fullname}
               onChange={handleChange}
-              name="name"
+              name="fullname"
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="surname" className="block text-gray-700">
-              Surname
+            <label htmlFor="description" className="block text-gray-700">
+              Description
             </label>
             <input
               type="text"
