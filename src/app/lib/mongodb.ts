@@ -39,3 +39,8 @@ export async function connectToDB(): Promise<mongoose.Connection> {
 
   return cache.conn;
 }
+
+const MONGO_URI = process.env.MONGO_URI as String;
+if (!MONGO_URI) {
+  throw new Error("Error: MONGO_URI no definido");
+}

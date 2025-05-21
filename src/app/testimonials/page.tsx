@@ -6,6 +6,8 @@ import FormTestimonialPage from "@/app/form-testimonial/page";
 export default function TestimonialsPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showTestimonials, setShowTestimonials] = useState(false);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const formRef = useRef<HTMLElement>(null);
 
@@ -18,6 +20,11 @@ export default function TestimonialsPage() {
 
   const handleTestimonials = () => setShowTestimonials(true);
 
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   useEffect(() => {
     if (showTestimonials) {
       formRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -85,7 +92,9 @@ export default function TestimonialsPage() {
           <button
             onClick={handleTestimonials}
             className="bg-[#51FE99] px-4 py-2 rounded border-2 w-full sm:w-auto transform hover:scale-105 transition-transform duration-300"
-          ></button>
+          >
+            Tell us about your experience
+          </button>
         </section>
 
         <section>
