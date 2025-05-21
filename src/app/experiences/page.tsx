@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { cn } from "@/app/utils/cn";
 
 interface Experience {
   title: string;
@@ -11,6 +12,7 @@ interface Experience {
 export default function ExperiencesPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -18,6 +20,12 @@ export default function ExperiencesPage() {
     { href: "/experiences", label: "Experiences" },
     { href: "/contact", label: "Contact" },
   ];
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const Experiences: Experience[] = [
     {
@@ -47,7 +55,12 @@ export default function ExperiencesPage() {
             Juan Carlos Muñoz Pabon
           </h2>
         </header>
-        <nav className="flex flex-wrap bg-[#9CFA8D] justify-center gap-4 md:gap-12 py-2 text-center border-2">
+        <nav
+          className={cn(
+            "relative border-2 bg-[#9CFA8D] p-2 rounded-md transition-shadow",
+            isScrolled && "shadow-lg top-0 z-20"
+          )}
+        >
           <button
             className="sm:hidden absolute top-2 right-2 p-2 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}

@@ -2,10 +2,12 @@
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import FormTestimonialPage from "@/app/form-testimonial/page";
+import { cn } from "@/app/utils/cn";
 
 export default function TestimonialsPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showTestimonials, setShowTestimonials] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const formRef = useRef<HTMLElement>(null);
 
@@ -16,7 +18,19 @@ export default function TestimonialsPage() {
     { href: "/contact", label: "Contact" },
   ];
 
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const handleTestimonials = () => setShowTestimonials(true);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     if (showTestimonials) {
@@ -35,7 +49,12 @@ export default function TestimonialsPage() {
             Juan Carlos Muñoz Pabon
           </h2>
         </header>
-        <nav className="relative border-2 bg-[#9CFA8D] p-2 rounded-md">
+        <nav
+          className={cn(
+            "relative border-2 bg-[#9CFA8D] p-2 rounded-md transition-shadow",
+            isScrolled && "shadow-lg top-0 z-20"
+          )}
+        >
           <button
             className="sm:hidden absolute top-2 right-2 p-2 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}

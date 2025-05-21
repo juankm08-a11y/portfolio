@@ -2,9 +2,11 @@
 import { Facebook, Instagram, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
+import { cn } from "@/app/utils/cn";
 
 export default function ContactPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -42,7 +44,12 @@ export default function ContactPage() {
             Juan Carlos Muñoz Pabon
           </h2>
         </header>
-        <nav className="relative border-2 bg-[#9CFA8D] p-2 rounded-md">
+        <nav
+          className={cn(
+            "relative border-2 bg-[#9CFA8D] p-2 rounded-md transition-shadow",
+            isScrolled && "shadow-lg top-0 z-20"
+          )}
+        >
           <button
             className="sm:hidden absolute top-2 right-2 p-2 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}

@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { cn } from "@/app/utils/cn";
 
 interface Proyect {
   title: string;
@@ -12,12 +13,20 @@ interface Proyect {
 export default function ProyectsPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/testimonials", label: "Testimonials" },
     { href: "/experiences", label: "Experiences" },
     { href: "/contact", label: "Contact" },
   ];
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const proyects: Proyect[] = [
     {
@@ -46,7 +55,12 @@ export default function ProyectsPage() {
             Juan Carlos Muñoz Pabon
           </h2>
         </header>
-        <nav className="relative border-2 bg-[#9CFA8D] p-2 rounded-md">
+        <nav
+          className={cn(
+            "relative border-2 bg-[#9CFA8D] p-2 rounded-md transition-shadow",
+            isScrolled && "shadow-lg top-0 z-20"
+          )}
+        >
           <button
             className="sm:hidden absolute top-2 right-2 p-2 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
