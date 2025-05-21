@@ -1,9 +1,13 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import FormTestimonialPage from "@/app/form-testimonial/page";
 
-export default function TestimoniesPage() {
+export default function TestimonialsPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showTestimonials, setShowTestimonials] = useState(false);
+
+  const formRef = useRef<HTMLElement>(null);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -11,12 +15,15 @@ export default function TestimoniesPage() {
     { href: "/experiences", label: "Experiences" },
     { href: "/contact", label: "Contact" },
   ];
-  const testimonies = [
-    "Testimonie 1",
-    "Testimonie 2",
-    "Testimonie 3",
-    "Testimonie 4",
-  ];
+
+  const handleTestimonials = () => setShowTestimonials(true);
+
+  useEffect(() => {
+    if (showTestimonials) {
+      formRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [showTestimonials]);
+
   return (
     <main className="flex flex-col items-center min-h-screen p-4 md:p-10 bg-white transition-all duration-500 ease-in-out">
       <section className="border-2 rounded-lg bg-[#90EAE9] w-full max-w-sm md:max-w-4xl md:p-10 space-y-6">
@@ -74,15 +81,11 @@ export default function TestimoniesPage() {
             ))}
           </ul>
         </nav>
-        <section className="grid grid-cols md:grid-cols-2 gap-6">
-          {testimonies.map((title, idx) => (
-            <div
-              key={`proyect-${idx}`}
-              className="bg-[#40B9B9] rounded-md p-4 border-2 text-center transition-transform duration-300 hover:scale-105"
-            >
-              <p className="font-bold">{title}</p>
-            </div>
-          ))}
+        <section className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
+          <button
+            onClick={handleTestimonials}
+            className="bg-[#51FE99] px-4 py-2 rounded border-2 w-full sm:w-auto transform hover:scale-105 transition-transform duration-300"
+          ></button>
         </section>
 
         <section>
@@ -147,7 +150,14 @@ export default function TestimoniesPage() {
           © Juan Carlos Muñoz 22-04-2025 <br />
           Contact:juancarlospabon01@gmail.com
         </footer>
-        <section className="rounded-md p-4 text-center"></section>
+        {showTestimonials && (
+          <section
+            ref={formRef}
+            className="w-full max-w-xl mt-8 animate-fadeIn"
+          >
+            <FormTestimonialPage />
+          </section>
+        )}
       </section>
     </main>
   );

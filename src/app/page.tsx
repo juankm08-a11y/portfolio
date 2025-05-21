@@ -24,19 +24,19 @@ export default function Home() {
 
   const mypersonalImages: PersonalImages[] = [
     {
-      title: "PresentPersonal",
+      title: "PresentationPersonal",
       imageUrl: "/images/personalImages/personal-image.jpeg",
     },
     {
-      title: "PresentPersonal2",
+      title: "PresentationPersonal2",
       imageUrl: "/images/personalImages/personal-image2.jpeg",
     },
     {
-      title: "PrsentPersonal3",
+      title: "PrsentationPersonal3",
       imageUrl: "/images/personalImages/personal-image3.jpeg",
     },
     {
-      title: "PresentPersonal4",
+      title: "PresentationPersonal4",
       imageUrl: "/images/personalImages/personal-image4.jpeg",
     },
   ];
@@ -81,7 +81,7 @@ export default function Home() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/testimonies", label: "Testimonies" },
+    { href: "/testimonials", label: "Testimonials" },
     { href: "/experiences", label: "Experiences" },
     { href: "/contact", label: "Contact" },
   ];
@@ -175,7 +175,9 @@ export default function Home() {
                 className="bg-[#40B9B9] rounded-md p-4 border-2 text-center transition-transform duration-300 hover:scale-105"
                 onClick={() => toogleMyPersonalImages(idx)}
               >
-                <p className="font-semibold break-words">{personalimg.title}</p>
+                <p className="font-semibold break-words text-center">
+                  {personalimg.title}
+                </p>
                 {openIndex === idx && (
                   <div className="mt-2 bg-white rounded-md p-4 shadow-md ">
                     <Image
