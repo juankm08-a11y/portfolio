@@ -29,7 +29,7 @@ export default function FormContactPage() {
       });
 
       if (res.ok) {
-        setStatus("Mensaje enviado correctamente");
+        setStatus("Message enviado correctamente");
         setFormData({ name: "", surname: "", email: "", message: "" });
       } else {
         setStatus("Error al enviar el mensaje");

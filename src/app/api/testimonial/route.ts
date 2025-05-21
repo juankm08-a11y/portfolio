@@ -8,8 +8,11 @@ export async function GET() {
     const testimonials = await Testimonial.find();
     return NextResponse.json(testimonials, { status: 200 });
   } catch (error) {
-    console.error("Error al obtener /api/testimonial", error);
-    return NextResponse.json({ error: "Error del servidor" }, { status: 500 });
+    console.error("Error to get /api/testimonial", error);
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
   }
 }
 
@@ -20,7 +23,10 @@ export async function POST(req: Request) {
 
     await new Testimonial({ fullname, description, experience }).save();
   } catch (error) {
-    console.error("Error al crear /api/testimonial", error);
-    return NextResponse.json({ error: "Error del servidor" }, { status: 500 });
+    console.error("Error to create /api/testimonial", error);
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
   }
 }

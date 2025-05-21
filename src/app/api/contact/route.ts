@@ -19,8 +19,11 @@ export async function GET() {
     const contacts = await Contact.find();
     return NextResponse.json(contacts, { status: 200 });
   } catch (error) {
-    console.error("Error al obtener /api/contact", error);
-    return NextResponse.json({ error: "Error del servidor" }, { status: 500 });
+    console.error("Error to get /api/contact", error);
+    return NextResponse.json(
+      { error: "Internal error servidor" },
+      { status: 500 }
+    );
   }
 }
 
@@ -33,21 +36,24 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from: `"Portfolio "<${process.env.SMTP_USER}>`,
       to: email,
-      subject: `Hola, ${name} ,buen dia`,
-      text: `Gracias por contactarme>
-      Recibi tu mensaje: ${message}`,
-      html: `  <h2>Nuevo mensaje de contacto</h2>
-        <p>Gracias por contactarme.Recibi tu mensaje</p>
+      subject: `Hello, ${name} ,good morning`,
+      text: `Thank you for contact me>
+      Send your mensaje: ${message}`,
+      html: `  <h2>New contact message</h2>
+        <p>Thank you for contact me.I receive your message.</p>
         <blockquote>${message}</blockquote>
-        <p>Te responderé pronto</p>`,
+        <p>I send message soon</p>`,
     });
 
     return NextResponse.json(
-      { message: "Mensaje enviado exitosamente" },
+      { message: "Message send sucessfully" },
       { status: 201 }
     );
   } catch (error) {
-    console.error("Error al crear /api/contact", error);
-    return NextResponse.json({ error: "Error del servidor" }, { status: 500 });
+    console.error("Error to crear /api/contact", error);
+    return NextResponse.json(
+      { error: "Internal Server errro" },
+      { status: 500 }
+    );
   }
 }
