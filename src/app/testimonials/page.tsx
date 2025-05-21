@@ -2,7 +2,6 @@
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import FormTestimonialPage from "@/app/form-testimonial/page";
-import Image from "next/image";
 
 export default function TestimonialsPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
