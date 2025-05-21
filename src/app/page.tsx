@@ -154,6 +154,7 @@ export default function Home() {
         <section className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="space-y-4">
             <div className="bg-[#40B9B9] rounded-md p-4 max-w-md border-2 transition-transform duration-300 hover:scale-105">
+              <h1>Hero Section</h1>
               <p>
                 Im a frontend and backend developer (full-stack) and a software
                 engineer
@@ -174,7 +175,7 @@ export default function Home() {
                 className="bg-[#40B9B9] rounded-md p-4 border-2 text-center transition-transform duration-300 hover:scale-105"
                 onClick={() => toogleMyPersonalImages(idx)}
               >
-                <p className="font-semibold">{personalimg.title}</p>
+                <p className="font-semibold break-words">{personalimg.title}</p>
                 {openIndex === idx && (
                   <div className="mt-2 bg-white rounded-md p-4 shadow-md ">
                     <Image
