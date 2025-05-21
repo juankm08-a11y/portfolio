@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { connectToDB } from "@/app/lib/mongodb";
 import { Contact } from "@/models/Contact";
 import nodemailer from "nodemailer";
-import { Testimonial } from "@/models/Testimonial";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -18,11 +17,9 @@ export async function GET() {
   try {
     await connectToDB();
     const contacts = await Contact.find();
-    const testimonials = await Testimonial.find();
     return NextResponse.json(contacts, { status: 200 });
   } catch (error) {
     console.error("Error al obtener /api/contact", error);
-    console.error("Error al obtener /api/testimonials ", error);
     return NextResponse.json({ error: "Error del servidor" }, { status: 500 });
   }
 }
@@ -34,7 +31,6 @@ export async function POST(req: Request) {
     await connectToDB();
 
     await new Contact({ name, surname, email, message }).save();
-    await new Testimonial({ fullname, description, experience }).save();
     await transporter.sendMail({
       from: `"Portfolio "<${process.env.SMTP_USER}>`,
       to: email,
