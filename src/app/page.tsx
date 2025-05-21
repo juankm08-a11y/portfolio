@@ -24,19 +24,19 @@ export default function Home() {
 
   const mypersonalImages: PersonalImages[] = [
     {
-      title: "PresentationPersonal",
+      title: "PresentPersonal",
       imageUrl: "/images/personalImages/personal-image.jpeg",
     },
     {
-      title: "PresentationPersonal2",
+      title: "PresentPersonal2",
       imageUrl: "/images/personalImages/personal-image2.jpeg",
     },
     {
-      title: "PresentationPersonal3",
+      title: "PrsentPersonal3",
       imageUrl: "/images/personalImages/personal-image3.jpeg",
     },
     {
-      title: "PresentationPersonal3",
+      title: "PresentPersonal4",
       imageUrl: "/images/personalImages/personal-image4.jpeg",
     },
   ];
