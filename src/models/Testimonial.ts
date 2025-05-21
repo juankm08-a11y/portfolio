@@ -2,8 +2,8 @@ import { model, models, Schema } from "mongoose";
 
 const TestimonialSchema = new Schema(
   {
-    name: String,
-    descriptio: String,
+    fullname: String,
+    description: String,
     experience: String,
   },
   {
