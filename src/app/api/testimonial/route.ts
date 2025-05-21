@@ -22,6 +22,11 @@ export async function POST(req: Request) {
     await connectToDB();
 
     await new Testimonial({ fullname, description, experience }).save();
+
+    return NextResponse.json(
+      { message: "Testimonial send succesfully" },
+      { status: 201 }
+    );
   } catch (error) {
     console.error("Error to create /api/testimonial", error);
     return NextResponse.json(
