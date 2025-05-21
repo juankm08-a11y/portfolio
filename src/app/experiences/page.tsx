@@ -21,13 +21,14 @@ export default function ExperiencesPage() {
 
   const Experiences: Experience[] = [
     {
-      title: "Experience 1",
-      description: "Description of Experience 1",
+      title: "school where I studied",
+      description: "I graduated from San Felipe Neri School in the year 2025.",
       imageUrl: "/images/experience1.png",
     },
     {
-      title: "Experience 2",
-      description: "Description of Experience 2",
+      title: "Visit Empresarial",
+      description:
+        "Five years ago, I had my company visit. It was an amazing experience where I got to visit software companies and learn more about the software industry, as well as explore the beautiful city of Medellín.",
       imageUrl: "/images/experience2.png",
     },
   ];

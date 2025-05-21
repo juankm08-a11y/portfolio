@@ -136,3 +136,7 @@
 2025-05-21 01:04:10.446 [pool-3-thread-1] INFO  com.rs.mv.mvvs.client.catalog.from.scan.CurrentPathScanner - [client:400205]scan file in current open file directory(C:/Users/Juan C/Desktop/portfolio/src/app/form-testimonial)
 2025-05-21 01:08:22.702 [pool-3-thread-1] INFO  com.rs.mv.mvvs.client.catalog.from.scan.CurrentPathScanner - [client:400205]scan file in current open file directory(C:/Users/Juan C/Desktop/portfolio/src/app/form-contact)
 2025-05-21 01:08:35.058 [pool-3-thread-1] INFO  com.rs.mv.mvvs.client.catalog.from.scan.CurrentPathScanner - [client:400205]scan file in current open file directory(C:/Users/Juan C/Desktop/portfolio/src/app/form-testimonial)
+2025-05-21 01:10:23.133 [pool-3-thread-1] INFO  com.rs.mv.mvvs.client.catalog.from.scan.CurrentPathScanner - [client:400205]scan file in current open file directory(C:/Users/Juan C/Desktop/portfolio/src/app/form-contact)
+2025-05-21 01:10:23.761 [pool-3-thread-1] INFO  com.rs.mv.mvvs.client.catalog.from.scan.CurrentPathScanner - [client:400205]scan file in current open file directory(C:/Users/Juan C/Desktop/portfolio/src/app/form-testimonial)
+2025-05-21 01:10:28.270 [pool-3-thread-1] INFO  com.rs.mv.mvvs.client.catalog.from.scan.CurrentPathScanner - [client:400205]scan file in current open file directory(C:/Users/Juan C/Desktop/portfolio/src/app/about)
+2025-05-21 01:11:38.829 [pool-3-thread-1] INFO  com.rs.mv.mvvs.client.catalog.from.scan.CurrentPathScanner - [client:400205]scan file in current open file directory(C:/Users/Juan C/Desktop/portfolio/src/app/experiences)
