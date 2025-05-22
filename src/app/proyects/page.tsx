@@ -63,7 +63,7 @@ export default function ProyectsPage() {
     {
       title: "restaurants&reservations",
       description: "This is software reservations&restaurants",
-      imageUrl: "/images/proyects/restaurants_reservations.png",
+      imageUrl: "/images/proyects/reservations_restaurants.png",
       url: "https://github.com/juankm08-a11y/ReservasyRestaurantes.git",
     },
     {
