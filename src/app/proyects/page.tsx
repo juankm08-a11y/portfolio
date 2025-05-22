@@ -69,7 +69,7 @@ export default function ProyectsPage() {
     {
       title: "plataformagestionInventario",
       description: "Plataforma Gestion Inventario",
-      imageUrl: "/images/proyects/restaurants_reservations.png",
+      imageUrl: "/images/proyects/platform_gestion_inventory.png",
       url: "https://agreeable-mud-038ce0d10.6.azurestaticapps.net",
     },
   ];
