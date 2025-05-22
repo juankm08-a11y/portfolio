@@ -8,6 +8,7 @@ interface Proyect {
   title: string;
   description: string;
   imageUrl: string;
+  gitUrl: string;
 }
 
 export default function ProyectsPage() {
@@ -30,14 +31,16 @@ export default function ProyectsPage() {
 
   const proyects: Proyect[] = [
     {
-      title: "Proyect 1",
-      description: "Scientific Calculator 2.0",
-      imageUrl: "/images/proyects/proyect_1.png",
+      title: "Scientific Calculator 2.0",
+      description: "My scientific Calculator 2.0",
+      imageUrl: "/images/proyects/scientific_calculator2.0.png",
+      gitUrl: "",
     },
     {
-      title: "Proyect 2",
-      description: "Login Card 1.0",
-      imageUrl: "/images/proyects/proyect_2.png",
+      title: "Login Card",
+      description: "Login Card",
+      imageUrl: "/images/proyects/login_card.png",
+      gitUrl: "",
     },
   ];
 
