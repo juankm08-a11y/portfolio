@@ -4,9 +4,33 @@
   :root {
     --primary: 0 73% 48%;
     --primary-foreground: 9 92% 71%;
-    --secondary: 9 86% 82;
+    --secondary: 9 86% 82%;
+    --secondary-foreground: 0 0% 100%;
+
     --accent: 0 85% 60%;
     --accent-foreground: 0 85% 100%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 15% 35%;
+
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 0 73% 48%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    --info: 198 93% 60%;
+    --info-foreground: 0 0% 100%;
   }
 }
 

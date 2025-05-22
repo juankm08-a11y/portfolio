@@ -88,8 +88,8 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center min-h-screen p-2 sm:p-4 md:p-10 bg-white transition-all duration-500 ease-in-out">
       <section className="border-2 rounded-lg bg-[#90EAE9] w-full max-w-sm md:max-w-4xl p-4 md:p-0 space-y-4 md:space-y-6">
-        <header className="text-center space-y-1 ">
-          <h1 className="text-lg md:text-xl font-semibold text-[#CE5D5D] transition-colors duration-300 hover:text-red-600">
+        <header className="text-center space-y-1">
+          <h1 className="text-lg md:text-xl font-semibold  text-[#CE5D5D]  transition-colors duration-300 hover:text-red-600">
             JCFOLIO
           </h1>
           <h2 className="text-sm md:text-lg font-semibold text-[#CE5D5D]">
@@ -133,7 +133,7 @@ export default function Home() {
               }}
             />
           </button>
-          <h1>JCFOLIO</h1>
+          <h1 className="text-accent">JCFOLIO</h1>
           <ul
             className={`flex flex-wrap justify-center gap-4 md:gap-12 py-2  ${
               isMenuOpen ? "block" : "hidden"
@@ -143,7 +143,7 @@ export default function Home() {
               <li key={`${link.label}-${idx}`} className="flex-shrink-0">
                 <Link
                   href={link.href}
-                  className="hover:underline transition-colors duration-200 cursor-pointer px-2"
+                  className="hover:underline transition-colors duration-200 cursor-pointer px-2 text-accent"
                 >
                   {link.label}
                 </Link>
@@ -153,7 +153,7 @@ export default function Home() {
         </nav>
         <section className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="space-y-4">
-            <div className="bg-[#40B9B9] rounded-md p-4 max-w-md border-2 transition-transform duration-300 hover:scale-105">
+            <div className="bg-[#40B9B9] rounded-md p-4 max-w-md border-2 transition-transform duration-300 hover:scale-105 text-accent">
               <h1>Hero Section</h1>
               <p>
                 Im a frontend and backend developer (full-stack) and a software
@@ -175,11 +175,11 @@ export default function Home() {
                 className="bg-[#40B9B9] rounded-md p-4 border-2 text-center transition-transform duration-300 hover:scale-105"
                 onClick={() => toogleMyPersonalImages(idx)}
               >
-                <p className="font-semibold break-words text-center">
+                <p className="font-semibold break-words text-center text-accent">
                   {personalimg.title}
                 </p>
                 {openIndex === idx && (
-                  <div className="mt-2 bg-white rounded-md p-4 shadow-md ">
+                  <div className="mt-2 bg-white rounded-md p-4 shadow-md">
                     <Image
                       src={personalimg.imageUrl}
                       alt={personalimg.title}
@@ -199,7 +199,7 @@ export default function Home() {
             <button
               key={`${btn.label}-${idx}`}
               onClick={btn.onClick}
-              className="bg-[#51FE99] px-4 py-2 rounded border-2 w-full sm:w-auto transform hover:scale-105 transition-transform duration-300"
+              className="bg-[#51FE99] px-4 py-2 rounded border-2 w-full sm:w-auto transform hover:scale-105 transition-transform duration-300 text-accent"
             >
               {btn.label}
             </button>
