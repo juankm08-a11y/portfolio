@@ -45,7 +45,7 @@ export default function ProyectsPage() {
     {
       title: "Boarding Pass Card",
       description: "This is my boarding pass card",
-      imageUrl: "/images/proyects/boardingpass.png",
+      imageUrl: "/images/proyects/boardingpass_card.png",
       url: "https://github.com/juankm08-a11y/my-music-player",
     },
     {
@@ -65,6 +65,12 @@ export default function ProyectsPage() {
       description: "This is software reservations&restaurants",
       imageUrl: "/images/proyects/restaurants_reservations.png",
       url: "https://github.com/juankm08-a11y/ReservasyRestaurantes.git",
+    },
+    {
+      title: "plataformagestionInventario",
+      description: "Plataforma Gestion Inventario",
+      imageUrl: "/images/proyects/restaurants_reservations.png",
+      url: "https://agreeable-mud-038ce0d10.6.azurestaticapps.net",
     },
   ];
 
