@@ -32,16 +32,24 @@ export default function ProyectsPage() {
   const proyects: Proyect[] = [
     {
       title: "Scientific Calculator 2.0",
-      description: "My scientific Calculator 2.0",
+      description: "This my scientific Calculator version 2.0",
       imageUrl: "/images/proyects/scientific_calculator2.0.png",
-      gitUrl: "",
+      gitUrl: "https://github.com/juankm08-a11y/Scientific-Calculator-2.0",
     },
     {
       title: "Login Card",
-      description: "Login Card",
+      description: "This is Login Card",
       imageUrl: "/images/proyects/login_card.png",
-      gitUrl: "",
+      gitUrl: "https://github.com/juankm08-a11y/Login-Card.git",
     },
+    {
+      title: "Login Card",
+      description: "This is Login Card",
+      imageUrl: "/images/proyects/.png",
+      gitUrl: "https://github.com/juankm08-a11y/my-music-player",
+    },
+
+    /*Dynamic surveys is still a project in development and will be deployed on AWS.*/
   ];
 
   const toggleProyect = (index: number) => {
