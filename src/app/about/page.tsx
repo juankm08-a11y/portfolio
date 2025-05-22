@@ -68,7 +68,7 @@ export default function AboutPage() {
       <section className="border-2 rounded-lg bg-[#90EAE9] w-full max-w-sm md:max-w-4xl md:p-10 space-y-6">
         <header className="text-center space-y-1">
           <h1 className="text-lg md:text-xl font-semibold text-[#CE5D5D] transition-colors duration-300 hover:text-red-600">
-            PORTFOLIO
+            JCFOLIO
           </h1>
           <h2 className="text-sm md:text-lg font-semibold text-[#CE5D5D]">
             Juan Carlos Muñoz Pabon
@@ -102,7 +102,7 @@ export default function AboutPage() {
               }}
             />
           </button>
-          <h1>PORTFOLIO</h1>
+          <h1 className="text-accent">JCFOLIO</h1>
           <ul
             className={`flex flex-wrap justify-center gap-4 md:gap-12 py-2 ${
               isMenuOpen ? "block" : "hidden"
@@ -112,7 +112,7 @@ export default function AboutPage() {
               <li key={`${link.label}-${idx}`}>
                 <Link
                   href={link.href}
-                  className="hover:underline transition-colors duration-200 cursor-pointer"
+                  className="hover:underline transition-colors duration-200 cursor-pointer text-accent"
                 >
                   {link.label}
                 </Link>
