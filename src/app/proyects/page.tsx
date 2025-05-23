@@ -66,12 +66,6 @@ export default function ProyectsPage() {
       imageUrl: "/images/proyects/reservations_restaurants.png",
       url: "https://github.com/juankm08-a11y/ReservasyRestaurantes.git",
     },
-    {
-      title: "plataformagestionInventario",
-      description: "Plataforma Gestion Inventario",
-      imageUrl: "/images/proyects/platform_gestion_inventory.png",
-      url: "https://agreeable-mud-038ce0d10.6.azurestaticapps.net",
-    },
   ];
 
   const toggleProyect = (index: number) => {
