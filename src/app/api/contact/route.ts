@@ -52,7 +52,7 @@ export async function POST(req: Request) {
   } catch (error) {
     console.error("Error to crear /api/contact", error);
     return NextResponse.json(
-      { error: "Internal Server errro" },
+      { error: "Internal Server error" },
       { status: 500 }
     );
   }
