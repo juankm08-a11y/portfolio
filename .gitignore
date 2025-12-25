@@ -10,6 +10,19 @@
 !.yarn/releases
 !.yarn/versions
 
+
+# Tooling / language servers
+.rmv/
+
+# VS Code settings
+.vscode/
+
+# Next.js build output
+.next/
+
+# Logs
+*.log
+
 # testing
 /coverage
 
