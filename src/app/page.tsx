@@ -1,11 +1,15 @@
+"use client";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 import PageLayout from "./components/PageLayout";
 
 export default function HomePage() {
   return (
     <PageLayout>
+      <Navbar />
       <section className="flex flex-col md:flex-row gap-6 items-center">
         <div className="space-y-4">
-          <h2 className="text-xl font-bold">Hello, I'm Juan</h2>
+          <h2 className="text-xl font-bold">{`Hello, I'm Juan`}</h2>
           <p className="text-cyan-700 font-semibold">
             Software Engineer & Full Stack developer
           </p>
@@ -15,6 +19,7 @@ export default function HomePage() {
           Image
         </div>
       </section>
+      <Footer />
     </PageLayout>
   );
 }

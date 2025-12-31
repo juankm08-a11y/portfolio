@@ -16,6 +16,7 @@ export default function PageLayout({
             Juan Carlos Muñoz Pabon
           </p>
         </header>
+        {children}
       </section>
     </main>
   );
