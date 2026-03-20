@@ -1,8 +1,4 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { cn } from "@/app/utils/cn";
 
 interface Proyect {
   title: string;
