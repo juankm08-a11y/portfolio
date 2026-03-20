@@ -2,35 +2,16 @@
 
 @layer base {
   :root {
-    --primary: 0 73% 48%;
-    --primary-foreground: 9 92% 71%;
-    --secondary: 9 86% 82%;
-    --secondary-foreground: 0 0% 100%;
+    --background: 222 47% 11%;
+    --surface: 220 26% 14%;
 
-    --accent: 0 85% 60%;
-    --accent-foreground: 0 85% 100%;
+    --primary: 243 75% 59%;
+    --secondary: 199 89% 48%;
+    --accent: 189 94% 43%;
 
-    --muted: 210 20% 94%;
-    --muted-foreground: 215 15% 35%;
-
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
-
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 0 73% 48%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
-    --success: 142 71% 45%;
-    --success-foreground: 0 0% 100%;
-
-    --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 0%;
-
-    --info: 198 93% 60%;
-    --info-foreground: 0 0% 100%;
+    --text-primary: 210 40% 98%;
+    --text-secondary: 215 20% 65%;
+    --muted: 215 28% 17%;
   }
 }
 

@@ -7,16 +7,24 @@ export default function HomePage() {
   return (
     <PageLayout>
       <Navbar />
-      <section className="flex flex-col md:flex-row gap-6 items-center">
-        <div className="space-y-4">
-          <h2 className="text-xl font-bold">{`Hello, I'm Juan`}</h2>
-          <p className="text-cyan-700 font-semibold">
+      <section className="min-h-[80vh] flex flex-col md:flex-row items-center justify-center gap-12 px-6 md:px-20 py-16 bg-background">
+        <div className="flex-1 space-y-6 text-center md:text-left">
+          <h1 className="text-4xl md:text-6xl font-bold text text-primary leading-tight">
+            Juan Carlos Muñoz
+          </h1>
+          <h2 className="text-xl md:text-2xl font-semibold text-primary">
             Software Engineer & Full Stack developer
+          </h2>
+
+          <p className="text text-secondary text-base md:text-lg max-w-xl">
+            Me encanta programar en Python, construyo soluciones reales, uso
+            arquitectura limpia y buenas prácticas de ingeniería de software
           </p>
-          <p>I love programming in Python in building real solutions</p>
         </div>
-        <div className="bg-white p-4 rounded-md border w-40 h-40 flex items-center justify-center">
-          Image
+        <div className="flex-1 flex justify-center">
+          <div className="bg-surface p-6 rounded-2xl shadow-2xl border border-muted w-56 h-56 md:w-72 md:h-17 flex items-center justify-center text-text-secondary">
+            Image
+          </div>
         </div>
       </section>
       <Footer />

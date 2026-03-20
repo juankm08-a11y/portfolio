@@ -9,13 +9,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "hsl(var(--primary))",
+        background: "hsl(var(--background))",
+        surface: "hsl(var(--surface))",
+
+        primary: "hsl(var--primary))",
         secondary: "hsl(var(--secondary))",
-        accent: "hsl(var(--accent))",
-        info: "hsl(var(--info))",
-        success: "hsl(var(--success))",
-        warning: "hsl(var(--warning))",
-        danger: "hsl(var(--danger))",
+        accent: "hsl(var(--acent))",
+
+        text: {
+          primary: "hsl(var(--text-primary))",
+          secondary: "hsl(var(--text-secondary))",
+        },
         muted: "hsl(var(--muted))",
       },
     },
