@@ -1,7 +1,7 @@
 "use client";
 
 import type { LucideIcon } from "lucide-react";
-import { Facebook, Instagram, Mail, Phone } from "lucide-react";
+import { Facebook, Github, Instagram, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 
 interface SocialLink {
@@ -26,6 +26,11 @@ const socials: SocialLink[] = [
     Icon: Mail,
     label: "Mail",
     href: "malito:juancarlospabon01@gmail.com",
+  },
+  {
+    Icon: Github,
+    label: "GitHub",
+    href: "https://github.com/juankm08-a11y",
   },
 ];
 
